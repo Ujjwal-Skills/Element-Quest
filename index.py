@@ -89,3 +89,15 @@ def display_element(number):
         print("========================================")
     else:
         print("Element not found.")
+
+
+# defining function that can generate random number
+seed = 53
+def my_random(seed,limit):
+    seed = (seed*17+23) % 1000
+    number = seed % limit + 1
+    return seed,number
+
+seed,atomic_number = my_random(seed,len(elements))
+display_element(atomic_number)
+
