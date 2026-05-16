@@ -98,6 +98,28 @@ def my_random(seed,limit):
     number = seed % limit + 1
     return seed,number
 
-seed,atomic_number = my_random(seed,len(elements))
-display_element(atomic_number)
+'''seed,atomic_number = my_random(seed,len(elements))
+display_element(atomic_number)'''
 
+
+# defining function unlock new elements for player
+def unlock_element(seed):
+    seed,number = my_random(seed,len(elements))
+    print("\n🎰 Spinning the Element Wheel...")
+    print("✨ You unlocked",elements[number]["name"],"(",elements[number]["symbol"],")!\n")
+    display_element(number)
+    return seed
+'''seed = unlock_element(seed)'''
+
+
+#Creating welcome screen
+print("\n+================================================+")
+print("|         🧪 WELCOME TO ELEMENT QUEST 🧪         |")
+print("|        The Ultimate Chemistry Adventure        |")
+print("+================================================+")
+print("| Collect elements, discover fun facts,          |")
+print("| and become the master of the periodic table!   |")
+print("| 🎁 Unlock new elements                         |")
+print("| 🧠 Play quizzes                                |")
+print("| 🏆 Build your collection                       |")
+print("+================================================+")
