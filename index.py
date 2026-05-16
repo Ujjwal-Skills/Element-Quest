@@ -65,3 +65,27 @@ elements = {
         },
     
 }
+
+
+#defining function that can accept atomic number and display all the info. of that element in clean game like format
+def display_element(number):
+    if number in elements:
+        print("========================================")
+        print("⚛️ ELEMENT INFORMATION")
+        print("========================================")
+        print("Name:",elements[number]["name"])
+        print("Symbol:",elements[number]["symbol"])
+        print("Atomic Number:",elements[number]["atomic_number"])
+        print("Atomic Mass:",elements[number]["atomic_mass"])
+        print("Category:",elements[number]["category"])
+        print("Group:",elements[number]["group"])
+        print("Period:",elements[number]["period"])
+        print("Melting Point:",elements[number]["melting"])
+        print("Boiling Point:",elements[number]["boiling"])
+        print("Discovered By:",elements[number]["discovered_by"])
+        print("Year of Discovery:",elements[number]["year_of_discovery"])
+        print("\n💡 Fun Fact:",elements[number]["fact"])
+
+        print("========================================")
+    else:
+        print("Element not found.")
