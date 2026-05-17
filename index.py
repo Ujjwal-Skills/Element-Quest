@@ -46,7 +46,7 @@ elements = {
         "boiling":"1342 °C",
         "discovered_by":"Johan August Arfwedson",
         "year_of_discovery":1817,
-        "fact":"Helium was discovered on the sun before it was found on the earth."
+        "fact":"Although it is a metal, Lithium it is soft enough to cut with a knife"
         },
 
     4 : {
@@ -161,7 +161,15 @@ def get_symbol(number,collection):
         return "??"
 #print(get_symbol(1,collection))
 
+#defining function to get first row of table layout
+def show_period_1 (collection):
+    row = [" "]*18
 
+    row[0] = get_symbol(1,collection) #group 1
+    row[17] = get_symbol(2,collection) #group 18
+    
+    print("".join(row))
+#show_period_1(collection)
 # defining the function for the main menu
 def main_menu():
     seed = 53
@@ -188,7 +196,9 @@ def main_menu():
         
         elif choice == 4:
             print("Collection feature coming soon!")
-
+            '''get_symbol(1,collection)
+            get_symbol(2,collection)
+            show_period_1(collection)'''
         elif choice == 5:
             print("Thanks for playing Element Quest!")
             break
