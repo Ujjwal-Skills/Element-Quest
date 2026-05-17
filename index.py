@@ -66,6 +66,8 @@ elements = {
     
 }
 
+#collection of unlocked element
+collection = []
 
 #defining function that can accept atomic number and display all the info. of that element in clean game like format
 def display_element(number):
@@ -92,7 +94,7 @@ def display_element(number):
 
 
 # defining function that can generate random number
-seed = 53
+
 def my_random(seed,limit):
     seed = (seed*17+23) % 1000
     number = seed % limit + 1
@@ -118,12 +120,20 @@ def welcome_screen():
 
 
 #defining the functions for the different option in menu
-# defining function unlock new elements for player
-def unlock_element(seed):
+# defining function for unlock new elements for player
+def unlock_element(seed,collection):
     seed,number = my_random(seed,len(elements))
-    print("\n🎰 Spinning the Element Wheel...")
-    print("✨ You unlocked",elements[number]["name"],"(",elements[number]["symbol"],")!\n")
-    display_element(number)
+    print("\n🎰 Spinning the Element Wheel...\n")
+    
+    if number not in collection:
+        print("✨ You unlocked",elements[number]["name"],"(",elements[number]["symbol"],")!\n")
+        display_element(number)
+        collection.append(number)
+        print("🏆 Added to your collection!")
+    else:
+        print(elements[number]["name"],elements[number]["symbol"])
+        print("📦 You already have this element in your collection.")
+
     return seed
 '''seed = unlock_element(seed)'''
 
@@ -144,6 +154,7 @@ def search_element(search):
 
 # defining the function for the main menu
 def main_menu():
+    seed = 53
     while True: #Return to the menu until player chooses to exit
         print("\n+=================== MAIN MENU ===================+\n")
         print("1. 🎁 Unlock Random Element")
@@ -156,7 +167,7 @@ def main_menu():
 
         #handling the choices made by player
         if choice == 1:
-            seed = unlock_element(seed)
+            seed = unlock_element(seed,collection)
 
         elif choice == 2:
             search = input("\nSearch the Element by entering the Name or Symbol: ").lower().strip()
