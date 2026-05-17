@@ -229,6 +229,24 @@ def show_period_7 (collection):
         row[j] = get_symbol(i,collection) #group from 4 to 18
     print("".join(row))
 
+#defining function to get lanthanides row of table layout
+def show_lanthanides (collection):
+    row = [" "]*18
+
+    for i in range(58,72):
+        j = (i+3) - 58
+        row[j] = get_symbol(i,collection) #group from 4 to 18
+    print("".join(row))
+
+#defining function to get actinides row of table layout
+def show_actinides (collection):
+    row = [" "]*18
+
+    for i in range(90,104):
+        j = (i+3) - 90
+        row[j] = get_symbol(i,collection) #group from 4 to 18
+    print("".join(row))
+
 # defining the function for the main menu
 def main_menu():
     seed = 53
