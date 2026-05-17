@@ -175,3 +175,7 @@ def main_menu():
         else:
             print("Invalid choice. Please try again.")
 
+
+#final structure of program
+welcome_screen()
+main_menu()
