@@ -135,7 +135,7 @@ def unlock_element(seed,collection):
         print("📦 You already have this element in your collection.")
 
     return seed
-'''seed = unlock_element(seed)'''
+'''seed = unlock_element(seed,collection)'''
 
 #defining the function for searching element
 def search_element(search):
