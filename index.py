@@ -102,16 +102,6 @@ def my_random(seed,limit):
 display_element(atomic_number)'''
 
 
-# defining function unlock new elements for player
-def unlock_element(seed):
-    seed,number = my_random(seed,len(elements))
-    print("\n🎰 Spinning the Element Wheel...")
-    print("✨ You unlocked",elements[number]["name"],"(",elements[number]["symbol"],")!\n")
-    display_element(number)
-    return seed
-'''seed = unlock_element(seed)'''
-
-
 #Creating welcome screen
 print("\n+================================================+")
 print("|         🧪 WELCOME TO ELEMENT QUEST 🧪         |")
@@ -124,3 +114,61 @@ print("| 🧠 Play quizzes                                |")
 print("| 🏆 Build your collection                       |")
 print("+================================================+\n")
 input("Press Enter to begin...")
+
+
+#defining the functions for the different option in menu
+# defining function unlock new elements for player
+def unlock_element(seed):
+    seed,number = my_random(seed,len(elements))
+    print("\n🎰 Spinning the Element Wheel...")
+    print("✨ You unlocked",elements[number]["name"],"(",elements[number]["symbol"],")!\n")
+    display_element(number)
+    return seed
+'''seed = unlock_element(seed)'''
+
+#defining the function for searching element
+def search_element(search):
+    element_name = []
+    element_symbol = []
+    for i in range(1,len(elements)+1):
+        element_name.append(elements[i]["name"].lower().strip())
+        element_symbol.append(elements[i]["symbol"].lower().strip())
+    
+    if search in element_name:
+        position = element_name.index(search)
+        display_element(position + 1)
+    elif search in element_symbol:
+        position = element_symbol.index(search)
+        display_element(position + 1)
+
+# building the main menu
+while True: #Return to the menu until player chooses to exit
+    print("\n+=================== MAIN MENU ===================+\n")
+    print("1. 🎁 Unlock Random Element")
+    print("2. 🔍 Search Element")
+    print("3. 🧠 Quiz Challenge")
+    print("4. 🏆 My Collection")
+    print("5. 🚪 Exit")
+
+    choice = int(input("Enter your choice: ")) #taking input from user
+
+    #handling the choices made by player
+    if choice == 1:
+        seed = unlock_element(seed)
+
+    elif choice == 2:
+        search = input("\nSearch the Element by entering the Name or Symbol: ").lower().strip()
+        search_element(search)
+    
+    elif choice == 3:
+        quiz = "df"
+    
+    elif choice == 4:
+        collection ="rf"
+
+    elif choice == 5:
+        print("Thanks you playing!")
+        break
+
+    else:
+        print("Invalid choice")
