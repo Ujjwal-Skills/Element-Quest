@@ -152,6 +152,16 @@ def search_element(search):
         position = element_symbol.index(search)
         display_element(position + 1)
 
+#functions for displaying periodic table in ASCII art for good UX
+#defining function for what should appear inside each cell of the periodic table
+def get_symbol(number,collection):
+    if number in collection:
+        return elements[number]["symbol"].center(2)
+    else:
+        return "??"
+#print(get_symbol(1,collection))
+
+
 # defining the function for the main menu
 def main_menu():
     seed = 53
