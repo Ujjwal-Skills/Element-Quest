@@ -161,14 +161,14 @@ while True: #Return to the menu until player chooses to exit
         search_element(search)
     
     elif choice == 3:
-        quiz = "df"
+        print("Quiz feature coming soon!")
     
     elif choice == 4:
-        collection ="rf"
+        print("Collection feature coming soon!")
 
     elif choice == 5:
-        print("Thanks you playing!")
+        print("Thanks for playing Element Quest!")
         break
 
     else:
-        print("Invalid choice")
+        print("Invalid choice. Please try again.")
