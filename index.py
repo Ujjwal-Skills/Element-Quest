@@ -102,18 +102,19 @@ def my_random(seed,limit):
 display_element(atomic_number)'''
 
 
-#Creating welcome screen
-print("\n+================================================+")
-print("|         🧪 WELCOME TO ELEMENT QUEST 🧪         |")
-print("|        The Ultimate Chemistry Adventure        |")
-print("+================================================+")
-print("| Collect elements, discover fun facts,          |")
-print("| and become the master of the periodic table!   |")
-print("| 🎁 Unlock new elements                         |")
-print("| 🧠 Play quizzes                                |")
-print("| 🏆 Build your collection                       |")
-print("+================================================+\n")
-input("Press Enter to begin...")
+#defining function for welcome screen
+def welcome_screen():
+    print("\n+================================================+")
+    print("|         🧪 WELCOME TO ELEMENT QUEST 🧪         |")
+    print("|        The Ultimate Chemistry Adventure        |")
+    print("+================================================+")
+    print("| Collect elements, discover fun facts,          |")
+    print("| and become the master of the periodic table!   |")
+    print("| 🎁 Unlock new elements                         |")
+    print("| 🧠 Play quizzes                                |")
+    print("| 🏆 Build your collection                       |")
+    print("+================================================+\n")
+    input("Press Enter to begin...")
 
 
 #defining the functions for the different option in menu
@@ -141,34 +142,36 @@ def search_element(search):
         position = element_symbol.index(search)
         display_element(position + 1)
 
-# building the main menu
-while True: #Return to the menu until player chooses to exit
-    print("\n+=================== MAIN MENU ===================+\n")
-    print("1. 🎁 Unlock Random Element")
-    print("2. 🔍 Search Element")
-    print("3. 🧠 Quiz Challenge")
-    print("4. 🏆 My Collection")
-    print("5. 🚪 Exit")
+# defining the function for the main menu
+def main_menu():
+    while True: #Return to the menu until player chooses to exit
+        print("\n+=================== MAIN MENU ===================+\n")
+        print("1. 🎁 Unlock Random Element")
+        print("2. 🔍 Search Element")
+        print("3. 🧠 Quiz Challenge")
+        print("4. 🏆 My Collection")
+        print("5. 🚪 Exit")
 
-    choice = int(input("Enter your choice: ")) #taking input from user
+        choice = int(input("Enter your choice: ")) #taking input from user
 
-    #handling the choices made by player
-    if choice == 1:
-        seed = unlock_element(seed)
+        #handling the choices made by player
+        if choice == 1:
+            seed = unlock_element(seed)
 
-    elif choice == 2:
-        search = input("\nSearch the Element by entering the Name or Symbol: ").lower().strip()
-        search_element(search)
-    
-    elif choice == 3:
-        print("Quiz feature coming soon!")
-    
-    elif choice == 4:
-        print("Collection feature coming soon!")
+        elif choice == 2:
+            search = input("\nSearch the Element by entering the Name or Symbol: ").lower().strip()
+            search_element(search)
+        
+        elif choice == 3:
+            print("Quiz feature coming soon!")
+        
+        elif choice == 4:
+            print("Collection feature coming soon!")
 
-    elif choice == 5:
-        print("Thanks for playing Element Quest!")
-        break
+        elif choice == 5:
+            print("Thanks for playing Element Quest!")
+            break
 
-    else:
-        print("Invalid choice. Please try again.")
+        else:
+            print("Invalid choice. Please try again.")
+
