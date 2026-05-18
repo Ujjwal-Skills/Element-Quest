@@ -289,6 +289,17 @@ def show_actinides (collection):
     
     row_layout(row)
 
+#defining function to display my collection in proper layout
+def show_collection():
+    show_period_1(collection)
+    show_period_2(collection)
+    show_period_3(collection)
+    show_period_4(collection)
+    show_period_5(collection)
+    show_period_6(collection)
+    show_period_7(collection)
+    show_lanthanides(collection)
+    show_actinides(collection)
 
 # defining the function for the main menu
 def main_menu():
@@ -317,15 +328,7 @@ def main_menu():
         elif choice == 4:
             #print("Collection feature coming soon!")
             print()
-            show_period_1(collection)
-            show_period_2(collection)
-            show_period_3(collection)
-            show_period_4(collection)
-            show_period_5(collection)
-            show_period_6(collection)
-            show_period_7(collection)
-            show_lanthanides(collection)
-            show_actinides(collection)
+            show_collection()
 
         elif choice == 5:
             print("Thanks for playing Element Quest!")
