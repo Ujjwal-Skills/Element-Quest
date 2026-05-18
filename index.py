@@ -291,6 +291,7 @@ def show_actinides (collection):
 
 #defining function to display my collection in proper layout
 def show_collection():
+    print("\n🧪 YOUR PERIODIC TABLE COLLECTION 🧪\n")
     show_period_1(collection)
     show_period_2(collection)
     show_period_3(collection)
@@ -327,7 +328,6 @@ def main_menu():
         
         elif choice == 4:
             #print("Collection feature coming soon!")
-            print()
             show_collection()
 
         elif choice == 5:
