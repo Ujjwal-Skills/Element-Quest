@@ -247,6 +247,18 @@ def show_actinides (collection):
         row[j] = get_symbol(i,collection) #group from 4 to 18
     print("".join(row))
 
+#defining function so that each symbol will be placed inside a bordered ASCII “tile” 
+def make_cell(text):
+    top = "+----+"
+    middle = "|"+text.center(4)+"|"
+    bottom = "+----+"
+    return top,middle,bottom
+'''top,middle,bottom = make_cell("??")
+print(top)
+print(middle)
+print(bottom)'''
+
+
 # defining the function for the main menu
 def main_menu():
     seed = 53
